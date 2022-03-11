@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="icon" href="equipe.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="valide_cookie()">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Règlement</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal  -->
+                <div class="modal-body">
+                    <p>
+                        Le but du jeu <b>YUM-Nouveau</b> genre est de compter le plus grand nombre de points en formant
+                        des combinaisons de dés.
+                        Vous devez compléter les combinaisons de dés inscrites en accumulant le plus de points possible.
+                        Pour se faire, vous avez le droit de lancer les dés jusqu'à 3 fois par tour de jeu. Si une
+                        combinaison n'est pas complétée après le 3ième lancer, vous devez décider l'option la plus
+                        avantageuse pour vous.
+                    </p>
+                    <ul>
+                        <li>
+                            Total des <b>UN, DEUX, TROIS, QUATRE, CINQ ou SIX</b> : total des dés pareils
+                        </li>
+                        <li>
+                            <b>BRELAN</b> : 3 dés pareils (total des 5 dés)
+                        </li>
+                        <li>
+                            <b>CARRÉ</b> : 4 dés pareils (total des 5 dés)
+                        </li>
+                        <li>
+                            <b>FULL</b> : 3 dés pareils + 2 dés pareils (25 points)
+                        </li>
+                        <li>
+                            <b>PETITE SUITE</b> : 4 dés dont les numéros sont consécutifs (30 points)
+                        </li>
+                        <li>
+                            <b>GRANDE SUITE</b> : 5 dés dont les numéros sont consécutifs (40 points)
+                        </li>
+                        <li>
+                            <b>YUM</b> : 5 dés pareils (50 points)
+                        </li>
+                        <li>
+                            <b>CHANCE</b> : n'importe quelle combinaison (total des 5 dés)
+                        </li>
+                    </ul>
+                    <p>
+                        Pour débuter une partie, le joueur doit cliquer sur <b>Nouvelle partie.</b> Par la suite, les 5
+                        dés
+                        (brassés) s'affichent.
+                        À ce moment, le joueur peut rebrasser les dés en cliquant sur <b>Brasser les dés</b> ou choisir
+                        la
+                        combinaison désirée et cliquer sur le bouton
+                        <b>Terminer</b> pour confirmer son choix. Par la suite, une nouvelle séquence de dés est brassés
+                        et le
+                        jeu
+                        se poursuit.
+                    </p>
+                    Bonne partie !
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="centre">YUM-Nouveau genre</h1>
+    <form action="">
+        <div class="container ">
+            <div class="row">
+                <div class="col-10">
+                </div>
+                <div class="col-2">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Règlement</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p class="section">section 1</p>
+                    <table>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des UN</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des DEUX</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des TROIS</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des QUATRE</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des CINQ</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">Total des SIX</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th>bonus si > que 63 points</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th>total sections #1</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <p class="section">section 2</p>
+                    <table>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">BRELAN</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">CARRÉ</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">FULL</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">PETITE SUITE</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">GRANDE SUITE</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">YUM</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th class="col-2"><input name="section1" type="radio">CHANCE</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                        <tr>
+                            <th>total sections #2</th>
+                            <th class="col-3"><input type="text" value="0" class="number" readonly></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="progress">
+                <div id="barre" class="progress-bar" style="width:7.69230769231%" role="progressbar" aria-valuemax="100"
+                    maxlength="100%">
+                    <p id="pourcentage">1</p>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row" id="dee" align="center">
+                <div class = "col-1">
+
+                </div>
+                <div class="col-2">
+                    <img src="image\D1.png" alt="d1">
+                </div>
+                <div class="col-2">
+                    <img src="image\D1.png" alt="d1">
+                </div>
+                <div class="col-2">
+                    <img src="image\D1.png" alt="d1">
+                </div>
+                <div class="col-2">
+                    <img src="image\D1.png" alt="d1">
+                </div>
+                <div class="col-2">
+                    <img src="image\D1.png" alt="d1">
+                </div>
+                
+            </div>
+            <br>
+            <div class="row" id="case" align="center">
+                <div class = "col-1">
+
+                </div>
+                <div class="col-2">
+                    <label>
+                        <input type="checkbox" value="1">
+                    </label>
+                </div>
+                <div class="col-2">
+                    <label>
+                        <input type="checkbox" value="2">
+                    </label>
+                </div>
+                <div class="col-2">
+                    <label>
+                        <input type="checkbox" value="3">
+                    </label>
+                </div>
+                <div class="col-2">
+                    <label>
+                        <input type="checkbox" value="4">
+                    </label>
+                </div>
+                <div class="col-2">
+                    <label>
+                        <input type="checkbox" value="5">
+                    </label>
+                </div>
+               
+            </div>
+            <p id="valeur_ddd">* Cocher pour conserver la valeur du dé</p>
+            <br>
+            <h1 class="centre">POINTAGE: <span id="point">0</span></h1>
+            <p class="centre">(Meilleur pointage de <span id="utilisateur">william</span> : <span
+                    id="point_total">0</span>)</p>
+            <div class="centre">
+                <input type="button" value="Brasser les dés" disabled="true">
+                <input type="button" value="Terminer" disabled="true">
+                <input type="button" value="Nouvelle partie">
+            </div>
+            <br>
+            <p class= "centre"><i><b>«N'oubliez pas: Le jeu doit rester un jeu»</b></i></p>
+        </div>
+        <input type="button" value="Progression test tmp" onclick="progress()" class="text-center">
+    </form>
+</body>
+
+</html>

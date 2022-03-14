@@ -10,7 +10,7 @@ function progress() {
 function valide_cookie() {
 
     setCookie();
-    
+
 
 
     let coo = document.cookie;
@@ -32,14 +32,22 @@ function SetCookie(name, value, dateExp) {
 }
 function setCookie() {
     let nom = prompt("quelle est votre nom ");
-    let pointage = 
+    let pointage = 0;
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
     SetCookie("nom", nom, date_exp);
 }
-function brasser(){
+function brasser() {
 
 }
 function nouvelles() {
-    
+
+    let brasse = document.getElementById("brasse");
+    brasse.disabled = false;
+
+    let terminer = document.getElementById("terminer");
+    terminer.disabled = false;
+
+    let nouvelle_partie = document.getElementById("nouvelle");
+    nouvelle_partie.disabled = true;
 }

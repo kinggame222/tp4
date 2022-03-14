@@ -10,15 +10,17 @@ function progress() {
 function valide_cookie() {
 
     let Nom_valide_cookie = false;
-
-
-    do {
-        setCookie();
-    } while (coo == null);
-
-    let coo = document.cookie;
+    setCookie();
+    
     console.log(Nom_valide_cookie);
-    console.log(coo);
+    
+    if (document.cookie != null) {
+        alert("E");
+    }else{
+        alert("nus");
+        setCookie();
+    }
+    
 }
 
 function SetCookie(name, value, dateExp) {
@@ -37,9 +39,24 @@ function SetCookie(name, value, dateExp) {
 function setCookie() {
     let nom = prompt("quelle est votre nom ");
     let pointage = 0;
+
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
     SetCookie("nom", nom, date_exp);
+}
+function GetCookie(name) {
+    let arg = name + "=";  // "nom="
+    let alen = arg.length; // longueur de arg = 4
+    let clen = document.cookie.length; // "nom=sylvain"
+    //console.log(document.cookie);
+    let i = 0;
+    while (i < clen) {
+        let j = i + alen;
+        if (document.cookie.substring(i, j) == arg) return getCookieVal(j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if (i == 0) break;
+    }
+    return null;
 }
 function brasser() {
 

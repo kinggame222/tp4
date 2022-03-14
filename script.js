@@ -9,10 +9,11 @@ function progress() {
 }
 function valide_cookie() {
 
-    if (document.cookie != null) {
-        afficherCookie();
-    } else {
+    if (document.cookie == null) {
         setCookie();
+    } else {
+        afficherCookie();
+
     }
 
 }
@@ -64,6 +65,12 @@ function afficherCookie() {
     document.getElementById("utilisateur").innerHTML = nom;
 
 }
+function supprimerCookie() {
+    let date_exp = new Date();
+    date_exp.setTime(date_exp.getTime() - (24 * 3600 * 1000)); // Ici on définit 2 jours
+    SetCookie("nom", "", date_exp);
+    SetCookie("argent", "", date_exp);
+}
 function brasser() {
 
 }
@@ -77,4 +84,5 @@ function nouvelles() {
 
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
+    supprimerCookie();
 }

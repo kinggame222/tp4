@@ -9,18 +9,12 @@ function progress() {
 }
 function valide_cookie() {
 
-    let Nom_valide_cookie = false;
-  
-    
-    console.log(Nom_valide_cookie);
-    
     if (document.cookie != null) {
-        alert("E");
-    }else{
-        
+        afficherCookie();
+    } else {
         setCookie();
     }
-    
+
 }
 
 function SetCookie(name, value, dateExp) {
@@ -45,9 +39,9 @@ function setCookie() {
     SetCookie("nom", nom, date_exp);
 }
 function GetCookie(name) {
-    let arg = name + "=";  // "nom="
+    let arg = name + "=";  // "nom= william"
     let alen = arg.length; // longueur de arg = 4
-    let clen = document.cookie.length; // "nom=sylvain"
+    let clen = document.cookie.length; // "nom=william"
     //console.log(document.cookie);
     let i = 0;
     while (i < clen) {
@@ -57,6 +51,18 @@ function GetCookie(name) {
         if (i == 0) break;
     }
     return null;
+}
+function getCookieVal(offset) {
+    let endstr = document.cookie.indexOf(";", offset);
+    if (endstr == -1) endstr = document.cookie.length;
+    return (document.cookie.substring(offset, endstr));
+}
+
+function afficherCookie() {
+    let nom = GetCookie("nom");
+
+    document.getElementById("utilisateur").innerHTML = nom;
+
 }
 function brasser() {
 

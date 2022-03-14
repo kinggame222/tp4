@@ -38,5 +38,8 @@ function setCookie() {
     SetCookie("nom", nom, date_exp);
 }
 function brasser(){
+
+}
+function nouvelles() {
     
 }

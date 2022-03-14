@@ -9,16 +9,15 @@ function progress() {
 }
 function valide_cookie() {
 
-    
-    setCookie();
-    let coo = document.cookie;
-    if(coo =null){
+    let Nom_valide_cookie = false;
+
+
+    do {
         setCookie();
-    }
+    } while (coo == null);
 
-
-
-    
+    let coo = document.cookie;
+    console.log(Nom_valide_cookie);
     console.log(coo);
 }
 

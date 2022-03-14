@@ -9,11 +9,14 @@ function progress() {
 }
 function valide_cookie() {
 
-    if (document.cookie == null) {
+    if (document.cookie != null) {
+        
+        alert("bon");
         setCookie();
     } else {
-        afficherCookie();
-
+        
+       
+        alert("autre");
     }
 
 }

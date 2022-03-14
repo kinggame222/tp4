@@ -9,11 +9,16 @@ function progress() {
 }
 function valide_cookie() {
 
+    
     setCookie();
-
-
-
     let coo = document.cookie;
+    if(coo =null){
+        setCookie();
+    }
+
+
+
+    
     console.log(coo);
 }
 

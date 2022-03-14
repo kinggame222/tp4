@@ -10,14 +10,14 @@ function progress() {
 function valide_cookie() {
 
     let Nom_valide_cookie = false;
-    setCookie();
+  
     
     console.log(Nom_valide_cookie);
     
     if (document.cookie != null) {
         alert("E");
     }else{
-        alert("nus");
+        
         setCookie();
     }
     

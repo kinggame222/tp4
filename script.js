@@ -7,14 +7,6 @@ function progress() {
         x++;
     }
 }
-function valide_cookie() {
-
-    if (document.cookie != null) {
-        afficherCookie();
-    } else {
-        setCookie();
-    }
-}
 
 function SetCookie(name, value, dateExp) {
     let argv = SetCookie.arguments;
@@ -29,6 +21,7 @@ function SetCookie(name, value, dateExp) {
         ((domain == null) ? "" : ("; domain=" + domain)) +
         ((secure == true) ? "; secure" : "");
 }
+
 function setCookie() {
     let nom = prompt("quelle est votre nom ");
     let pointage = 0;
@@ -36,7 +29,10 @@ function setCookie() {
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
     SetCookie("nom", nom, date_exp);
+    SetCookie("pointage", pointage, date_exp);
+    localStorage.setItem(nom, pointage);
 }
+
 function GetCookie(name) {
     let arg = name + "=";  // "nom= william"
     let alen = arg.length; // longueur de arg = 4
@@ -51,6 +47,7 @@ function GetCookie(name) {
     }
     return null;
 }
+
 function getCookieVal(offset) {
     let endstr = document.cookie.indexOf(";", offset);
     if (endstr == -1) endstr = document.cookie.length;
@@ -59,19 +56,29 @@ function getCookieVal(offset) {
 
 function afficherCookie() {
     let nom = GetCookie("nom");
-
-    document.getElementById("utilisateur").innerHTML = nom;
-
+    document.getElementById("utilisateur").innerText = nom;
 }
+
 function supprimerCookie() {
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() - (24 * 3600 * 1000)); // Ici on définit 2 jours
     SetCookie("nom", "", date_exp);
     SetCookie("argent", "", date_exp);
 }
-function brasser() {
 
+function valide_cookie() {
+
+    if (document.cookie == 0 || document.cookie == null) {
+        setCookie();
+    } else {
+        afficherCookie();
+    }
 }
+
+function brasser() {
+    //todo
+}
+
 function nouvelles() {
 
     let brasse = document.getElementById("brasse");
@@ -83,4 +90,10 @@ function nouvelles() {
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
     supprimerCookie();
+    var inputs = document.querySelectorAll('.dees');
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
+
+
 }

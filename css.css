@@ -1,5 +1,7 @@
 body {
     background-color:  rgb(255, 233, 198);
+    background: linear-gradient( rgb(189, 233, 30),rgb(80, 241, 80),rgb(0, 255, 149));
+    
 }
 .centre{
     text-align: center;

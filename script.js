@@ -76,7 +76,9 @@ function valide_cookie() {
 }
 
 function brasser() {
-    //todo
+    var barre = document.getElementsByClassName("image1");
+    barre.src = "image\de-YUM.gif";
+
 }
 
 function nouvelles() {
@@ -91,8 +93,12 @@ function nouvelles() {
     nouvelle_partie.disabled = true;
     supprimerCookie();
 
-    var checkbox = document.querySelector('input[type=checkbox][class=dees]:checked');
-    checkbox.checked = false;
+    
+
+    var inputs = document.querySelectorAll('.dees');
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+    }
     var radio1 = document.querySelector('input[type=radio][name=section1]:checked');
     radio1.checked = false;
 

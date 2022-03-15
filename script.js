@@ -24,7 +24,7 @@ function SetCookie(name, value, dateExp) {
 
 function setCookie() {
     let nom = prompt("quelle est votre nom ");
-    let pointage = 0;
+    let pointage = 1;
 
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
@@ -90,10 +90,16 @@ function nouvelles() {
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
     supprimerCookie();
-    var inputs = document.querySelectorAll('.dees');
-    for (var i = 0; i < inputs.length; i++) {
-        inputs[i].checked = false;
-    }
+
+    var checkbox = document.querySelector('input[type=checkbox][class=dees]:checked');
+    checkbox.checked = false;
+    var radio1 = document.querySelector('input[type=radio][name=section1]:checked');
+    radio1.checked = false;
+
+    var radio2 = document.querySelector('input[type=radio][name=section2]:checked');
+    radio2.checked = false;
+
+
 
 
 }

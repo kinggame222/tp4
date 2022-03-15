@@ -10,15 +10,10 @@ function progress() {
 function valide_cookie() {
 
     if (document.cookie != null) {
-        
-        alert("bon");
-        setCookie();
+        afficherCookie();
     } else {
-        
-       
-        alert("autre");
+        setCookie();
     }
-
 }
 
 function SetCookie(name, value, dateExp) {

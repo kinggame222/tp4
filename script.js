@@ -1,10 +1,10 @@
-var x = 1;
-function progress() {
-    if (x <= 13) {
+var nbr = 1;
+function progress(nbr) {
+    if (nbr <= 13) {
         var barre = document.getElementById("barre");
-        barre.style.width = (x * 7.69230769231) + "%";
-        document.getElementById("pourcentage").innerHTML = x;
-        x++;
+        barre.style.width = (nbr * 7.69230769231) + "%";
+        document.getElementById("pourcentage").innerHTML = nbr;
+        nbr++;
     }
 }
 
@@ -141,8 +141,7 @@ function nouvelles() {
     let radio1 = document.querySelector('input[type=radio][name=section1]:checked');
     radio1.checked = false;
 
-    let radio2 = document.querySelector('input[type=radio][name=section2]:checked');
-    radio2.checked = false;
+
 }
 
 function terminer_tour() {
@@ -150,10 +149,33 @@ function terminer_tour() {
     let point = 1;
 
     var bouton_check1 = document.querySelector('input[type=radio][name=section1]:checked');
-    
-    if (bouton_check1 == null ) {
+
+    let bouton_disable = document.querySelector('input[type=radio][name=section1]:checked');
+
+    if (bouton_check1 == null) {
         alert('veuiller selectionner une case')
     }
+    // Désactiver le bouton d’option associé à la combinaison choisie
+    bouton_disable.disabled = true;
 
-    setCookie(point);
+    //Calculer les points
+
+    //Augmenter la barre de progression
+
+    //  Décocher les cases à cocher
+
+    //Si les 13 combinaisons ont été faites
+    if (nbr <= 13) {
+        progress(nbr);
+       
+        console.log(nbr);
+         nbr++;
+        //▪ Afficher un message de félicitation
+        //▪ Mettre à jour vos cookies (si le pointage > pointage inscrit dans le cookie)
+        setCookie(point);
+        //▪ Désactiver les boutons « Brasser les dés » et « Terminer »
+        //▪ Activer le bouton « Nouvelle partie »
+    }
+
+
 }

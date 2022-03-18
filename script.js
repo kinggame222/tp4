@@ -76,44 +76,46 @@ function valide_cookie() {
     }
 }
 //Brasser les dés
-
+let cptBrasser = 1;
 function afficherRandom() {
 
     //Brasser dés
 
     for (var x = 1; x <= 5; x++) {
+        let y = document.getElementById("d" + x).checked;
 
-        document.getElementById("image" + x).src = "image/de-YUM.gif";
+        if (y != true) {
+            document.getElementById("image" + x).src = "image/de-YUM.gif";
+        }
     }
     //Désactiver brasser les dés après 3 fois
     let brasse = document.getElementById("brasse");
 
-    let cptBrasser = 0;
-    if (cptBrasser <= 3) {
+
+    if (cptBrasser == 3) {
 
         brasse.disabled = true;
-        cptBrasser++;
-    }
+
+    } cptBrasser++;
     setTimeout(afficherNbr, 2100);
 }
 
-
-
-// --------------------------------------------------------------
-
+// afficher l'image random
 function afficherNbr(position, no) {
 
     for (let i = 1; i <= 5; i++) {
 
+        let y = document.getElementById("d" + i).checked;
+
         let rand = 1 + Math.floor(Math.random() * 5);
-
-        let resultat = document.getElementById("image" + i).src = "image/D" + rand + ".png";
-        console.log(resultat);
+        if (y != true) {
+            let resultat = document.getElementById("image" + i).src = "image/D" + rand + ".png";
+            console.log(resultat);
+        }
     }
-
 }
 
-
+//bouton nouvelle partie
 function nouvelles() {
 
     let brasse = document.getElementById("brasse");
@@ -135,8 +137,4 @@ function nouvelles() {
 
     var radio2 = document.querySelector('input[type=radio][name=section2]:checked');
     radio2.checked = false;
-
-
-
-
 }

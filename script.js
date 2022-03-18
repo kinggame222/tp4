@@ -21,16 +21,22 @@ function SetCookie(name, value, dateExp) {
         ((domain == null) ? "" : ("; domain=" + domain)) +
         ((secure == true) ? "; secure" : "");
 }
+let pointage = 0;
+function setCookie(point) {
+    if (document.cookie == "" || document.cookie == null) {
 
-function setCookie() {
-    let nom = prompt("quelle est votre nom ");
-    let pointage = 1;
+        let nom = prompt("quelle est votre nom ");
 
-    let date_exp = new Date();
-    date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
-    SetCookie("nom", nom, date_exp);
-    SetCookie("pointage", pointage, date_exp);
-    localStorage.setItem(nom, pointage);
+        let date_exp = new Date();
+        date_exp.setTime(date_exp.getTime() + (45 * 24 * 3600 * 1000)); // Ici on définit 45 jours
+        SetCookie("nom", nom, date_exp);
+        localStorage.setItem(player, nom);
+    }
+    else {
+
+        let pointage = point;
+        localStorage.setItem("point_total", pointage);
+    }
 }
 
 function GetCookie(name) {
@@ -64,13 +70,14 @@ function supprimerCookie() {
     let date_exp = new Date();
     date_exp.setTime(date_exp.getTime() - (24 * 3600 * 1000)); // Ici on définit 2 jours
     SetCookie("nom", "", date_exp);
-    SetCookie("argent", "", date_exp);
+
 }
 
 function valide_cookie() {
 
     if (document.cookie == 0 || document.cookie == null) {
         setCookie();
+        afficherCookie();
     } else {
         afficherCookie();
     }
@@ -101,7 +108,7 @@ function afficherRandom() {
 }
 
 // afficher l'image random
-function afficherNbr(position, no) {
+function afficherNbr() {
 
     for (let i = 1; i <= 5; i++) {
 
@@ -126,15 +133,21 @@ function nouvelles() {
 
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
-    supprimerCookie();
-
-    var inputs = document.querySelectorAll('.dees');
+    
+    let inputs = document.querySelectorAll('.dees');
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].checked = false;
     }
-    var radio1 = document.querySelector('input[type=radio][name=section1]:checked');
+    let radio1 = document.querySelector('input[type=radio][name=section1]:checked');
     radio1.checked = false;
 
-    var radio2 = document.querySelector('input[type=radio][name=section2]:checked');
+    let radio2 = document.querySelector('input[type=radio][name=section2]:checked');
     radio2.checked = false;
+}
+
+function terminer_tour() {
+
+    let point = 1;
+
+    setCookie(point);
 }

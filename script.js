@@ -133,7 +133,7 @@ function nouvelles() {
 
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
-    
+
     let inputs = document.querySelectorAll('.dees');
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].checked = false;
@@ -148,6 +148,12 @@ function nouvelles() {
 function terminer_tour() {
 
     let point = 1;
+
+    var bouton_check1 = document.querySelector('input[type=radio][name=section1]:checked');
+    
+    if (bouton_check1 == null ) {
+        alert('veuiller selectionner une case')
+    }
 
     setCookie(point);
 }

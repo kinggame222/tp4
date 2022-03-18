@@ -1,6 +1,5 @@
 body {
     background-color:  rgb(255, 233, 198);
-    background: linear-gradient( rgb(189, 233, 30),rgb(80, 241, 80),rgb(0, 255, 149));
     
 }
 .centre{
@@ -24,15 +23,18 @@ table ,th,tr {
     vertical-align: bottom;
     margin-top: 1em;
 }
+
 img{
     width: 75px;
     text-align: center;
     margin-top: 1em;
 }
+
 .checkbox{
     width :"100px";
     height :"";
 }
+
 input[type=checkbox] {
     -ms-transform: scale(2);
     /*TAILLE x2 INTERNET EXPLORER*/
@@ -46,6 +48,7 @@ input[type=checkbox] {
     transform: scale(2);
     padding: 10px;
 }
+
 #valeur_ddd{
     text-align: center;
     margin-top: 1em;

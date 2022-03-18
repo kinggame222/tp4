@@ -57,6 +57,7 @@ function getCookieVal(offset) {
 function afficherCookie() {
     let nom = GetCookie("nom");
     document.getElementById("utilisateur").innerText = nom;
+
 }
 
 function supprimerCookie() {
@@ -74,12 +75,44 @@ function valide_cookie() {
         afficherCookie();
     }
 }
+//Brasser les dés
 
-function brasser() {
-    var barre = document.getElementsByClassName("image1");
-    barre.src = "image\de-YUM.gif";
+function afficherRandom() {
+
+    //Brasser dés
+
+    for (var x = 1; x <= 5; x++) {
+
+        document.getElementById("image" + x).src = "image/de-YUM.gif";
+    }
+    //Désactiver brasser les dés après 3 fois
+    let brasse = document.getElementById("brasse");
+
+    let cptBrasser = 0;
+    if (cptBrasser <= 3) {
+
+        brasse.disabled = true;
+        cptBrasser++;
+    }
+    setTimeout(afficherNbr, 2100);
+}
+
+
+
+// --------------------------------------------------------------
+
+function afficherNbr(position, no) {
+
+    for (let i = 1; i <= 5; i++) {
+
+        let rand = 1 + Math.floor(Math.random() * 5);
+
+        let resultat = document.getElementById("image" + i).src = "image/D" + rand + ".png";
+        console.log(resultat);
+    }
 
 }
+
 
 function nouvelles() {
 
@@ -92,8 +125,6 @@ function nouvelles() {
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
     supprimerCookie();
-
-    
 
     var inputs = document.querySelectorAll('.dees');
     for (var i = 0; i < inputs.length; i++) {

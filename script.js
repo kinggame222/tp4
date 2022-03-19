@@ -155,6 +155,7 @@ function terminer_tour() {
 
     //Calculer les points
 
+    pointe();
     //Augmenter la barre de progression
 
     //  Décocher les cases à cocher
@@ -183,4 +184,19 @@ function terminer_tour() {
     }
 
 
+}
+function pointe(point) {
+
+
+
+    for (let i = 1; i <= 5; i++) {
+
+        let y = document.getElementById("d" + i).checked;
+
+        let rand = 1 + Math.floor(Math.random() * 5);
+        if (y != true) {
+            let resultat = document.getElementById("image" + i).src ;
+            console.log(resultat);
+        }
+    }
 }

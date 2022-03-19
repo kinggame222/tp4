@@ -1,10 +1,10 @@
-var x = 1;
-function progress() {
-    if (x <= 13) {
+var nbr = 1;
+function progress(nbr) {
+    if (nbr <= 13) {
         var barre = document.getElementById("barre");
-        barre.style.width = (x * 7.69230769231) + "%";
-        document.getElementById("pourcentage").innerHTML = x;
-        x++;
+        barre.style.width = (nbr * 7.69230769231) + "%";
+        document.getElementById("pourcentage").innerHTML = nbr;
+        nbr++;
     }
 }
 
@@ -133,21 +133,54 @@ function nouvelles() {
 
     let nouvelle_partie = document.getElementById("nouvelle");
     nouvelle_partie.disabled = true;
-    
+
     let inputs = document.querySelectorAll('.dees');
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].checked = false;
     }
     let radio1 = document.querySelector('input[type=radio][name=section1]:checked');
     radio1.checked = false;
-
-    let radio2 = document.querySelector('input[type=radio][name=section2]:checked');
-    radio2.checked = false;
+    progress(nbr = 0);
 }
 
 function terminer_tour() {
-
     let point = 1;
+    var bouton_check1 = document.querySelector('input[type=radio][name=section1]:checked');
+    let bouton_disable = document.querySelector('input[type=radio][name=section1]:checked');
+    if (bouton_check1 == null) {
+        alert('veuiller selectionner une case')
+    }
+    // Désactiver le bouton d’option associé à la combinaison choisie
+    bouton_disable.disabled = true;
 
-    setCookie(point);
+    //Calculer les points
+
+    //Augmenter la barre de progression
+
+    //  Décocher les cases à cocher
+
+    //Si les 13 combinaisons ont été faites
+    if (nbr <= 13) {
+        progress(nbr);
+        console.log(nbr);
+        nbr++;
+        //▪ Afficher un message de félicitation
+        //TODO:message felicitation
+    }
+    else {
+        //TODO:Mettre à jour vos cookies (si le pointage > pointage inscrit dans le cookie)
+
+        setCookie(point);
+        //▪ Désactiver les boutons « Brasser les dés » et « Terminer »
+        let brasse = document.getElementById("brasse");
+        brasse.disabled = true;
+        // desactive
+        let terminer = document.getElementById("terminer");
+        terminer.disabled = true;
+        //▪ Activer le bouton « Nouvelle partie »
+        let nouvelle_partie = document.getElementById("nouvelle");
+        nouvelle_partie.disabled = false;
+    }
+
+
 }

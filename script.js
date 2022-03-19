@@ -140,7 +140,7 @@ function nouvelles() {
     }
     let radio1 = document.querySelector('input[type=radio][name=section1]:checked');
     radio1.checked = false;
-    progress(nbr=0);
+    progress(nbr = 0);
 }
 
 function terminer_tour() {
@@ -165,15 +165,16 @@ function terminer_tour() {
         console.log(nbr);
         nbr++;
         //▪ Afficher un message de félicitation
-        //TODO:message
+        //TODO:message felicitation
     }
-    else{
- //▪ Mettre à jour vos cookies (si le pointage > pointage inscrit dans le cookie)
+    else {
+        //TODO:Mettre à jour vos cookies (si le pointage > pointage inscrit dans le cookie)
+
         setCookie(point);
         //▪ Désactiver les boutons « Brasser les dés » et « Terminer »
         let brasse = document.getElementById("brasse");
         brasse.disabled = true;
-// desactive
+        // desactive
         let terminer = document.getElementById("terminer");
         terminer.disabled = true;
         //▪ Activer le bouton « Nouvelle partie »

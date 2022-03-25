@@ -156,12 +156,9 @@ function terminer_tour() {
 
     //Calculer les points
 
-<<<<<<< HEAD
-=======
     pointe();
     //Augmenter la barre de progression
 
->>>>>>> 10995bad5e8d2de2511480207a0081c332187616
     //  Décocher les cases à cocher
 
     //Si les 13 combinaisons ont été faites

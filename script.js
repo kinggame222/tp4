@@ -117,6 +117,7 @@ function afficherNbr() {
         let rand = 1 + Math.floor(Math.random() * 5);
         if (y != true) {
             let resultat = document.getElementById("image" + i).src = "image/D" + rand + ".png";
+            let dés = document.getElementById("image" + i).src = "image/D" + rand + ".png";
             console.log(resultat);
         }
     }
@@ -154,8 +155,6 @@ function terminer_tour() {
     bouton_disable.disabled = true;
 
     //Calculer les points
-
-    //Augmenter la barre de progression
 
     //  Décocher les cases à cocher
 

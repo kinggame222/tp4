@@ -156,6 +156,12 @@ function terminer_tour() {
 
     //Calculer les points
 
+<<<<<<< HEAD
+=======
+    pointe();
+    //Augmenter la barre de progression
+
+>>>>>>> 10995bad5e8d2de2511480207a0081c332187616
     //  Décocher les cases à cocher
 
     //Si les 13 combinaisons ont été faites
@@ -182,4 +188,19 @@ function terminer_tour() {
     }
 
 
+}
+function pointe(point) {
+
+
+
+    for (let i = 1; i <= 5; i++) {
+
+        let y = document.getElementById("d" + i).checked;
+
+        let rand = 1 + Math.floor(Math.random() * 5);
+        if (y != true) {
+            let resultat = document.getElementById("image" + i).src ;
+            console.log(resultat);
+        }
+    }
 }
